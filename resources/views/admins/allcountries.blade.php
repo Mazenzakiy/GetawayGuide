@@ -26,6 +26,7 @@
                             <th scope="col">continent</th>
                             <th scope="col">population</th>
                             <th scope="col">territory</th>
+                            <th scope="col">Edit</th>
                             <th scope="col">delete</th>
                         </tr>
                     </thead>
@@ -37,6 +38,8 @@
                                 <td>{{ $country->continent }}</td>
                                 <td>{{ $country->population }}</td>
                                 <td>{{ $country->territory }}</td>
+                                <td><a href="{{ route('edit.countries', $country->id) }}" class="btn btn-warning text-center">Edit</a></td>
+
                                 <td><a href="{{ route('delete.countries', $country->id) }}" class="btn btn-danger  text-center ">Delete</a></td>
                             </tr>
                         @endforeach

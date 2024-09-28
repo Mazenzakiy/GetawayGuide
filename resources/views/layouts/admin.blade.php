@@ -12,9 +12,9 @@
 </head>
 <body>
 <div id="wrapper">
-    <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
+    <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark   ">
         <div class="container">
-        <a class="navbar-brand" href="#">LOGO</a>
+        <a class="navbar-brand" href="#">GG Getaway Guide Dashboard</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,6 +40,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('all.bookings') }}" style="margin-left: 20px;">Bookings</a>
                     </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ route('all.landmarks') }}" style="margin-left: 20px;">Landmarks</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ route('all.tourguides') }}" style="margin-left: 20px;">TourGuide</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="{{ route('all.preferences') }}" style="margin-left: 20px;">Preferences</a>
+                    </li>
+
                 </ul>
             @endauth
             <ul class="navbar-nav ml-md-auto d-md-flex">

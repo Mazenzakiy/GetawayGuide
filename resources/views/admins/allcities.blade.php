@@ -27,6 +27,7 @@
                             <th scope="col">image</th>
                             <th scope="col">trip_days</th>
                             <th scope="col">price</th>
+                            <th scope="col">Edit</th>
                             <th scope="col">delete</th>
                         </tr>
                     </thead>
@@ -38,6 +39,7 @@
                                 <td><img width="60" height="60" src="{{ asset('assets/images/'.$city->image.'') }}"></td>
                                 <td>{{ $city->num_days }}</td>
                                 <td>${{ $city->price }}</td>
+                                <td><a href="{{ route('edit.cities', $city->id) }}" class="btn btn-warning text-center ">Edit</a></td>
                                 <td><a href="{{ route('delete.cities', $city->id) }}" class="btn btn-danger  text-center ">delete</a></td>
                             </tr>
                         @endforeach

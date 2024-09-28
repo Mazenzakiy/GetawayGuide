@@ -43,7 +43,7 @@
                 <div class="slider-content">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h2>{{$city->name }}<em>  landmarks  </em></h2>
+                            <h2>landmark’s <em> &amp; </em></h2>
 
                         </div>
                         <div class="col-lg-12">
@@ -73,11 +73,10 @@
                                         @csrf
                                         @foreach ($preferences as $preference)
                                             <div class="form-group">
-                                                <label style="margin-top:2%; font-weight: bold">{{ $preference->question }}</label>
+                                                <label>{{ $preference->question }}</label>
                                                 @if ($preference->type == 'single')
                                                     @foreach ($preference->options as $option)
-                                                        <div
-                                                        style="margin-top:1%">
+                                                        <div>
                                                             <input type="radio" name="preferences[]"
                                                                 value="{{ $option->id }}"
                                                                 {{ $loop->first ? 'required' : '' }}>
@@ -86,7 +85,7 @@
                                                     @endforeach
                                                 @elseif($preference->type == 'multiple')
                                                     @foreach ($preference->options as $option)
-                                                        <div style="margin-top:1%">
+                                                        <div>
                                                             <input type="checkbox" name="preferences[]"
                                                                 value="{{ $option->id }}">
                                                             <label>{{ $option->option }}</label>
@@ -95,7 +94,7 @@
                                                 @endif
                                             </div>
                                         @endforeach
-                                        <button type="submit" name="submit" class="btn btn-primary" style="margin-top: 1%">Get
+                                        <button type="submit" name="submit" class="btn btn-primary">Get
                                             Recommendations</button>
                                     </form>
 

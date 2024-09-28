@@ -9,9 +9,10 @@
                 <h5 class="card-title mb-5 d-inline">Create Countries</h5>
                 <form method="POST" action="{{ route('create.countries') }}" enctype="multipart/form-data">
                     @csrf
-                    <!-- Email input -->
+
                     <div class="form-outline mb-4 mt-4">
-                        <input type="text" name="name" id="form2Example1" class="form-control" placeholder="name" />
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="name" />
                     </div>
 
                     @if($errors->has('name'))
@@ -19,7 +20,8 @@
                     @endif
 
                     <div class="form-outline mb-4 mt-4">
-                        <input type="file" name="image" id="form2Example1" class="form-control" />
+                        <label for="image">Image</label>
+                        <input type="file" name="image" id="image" class="form-control" />
                     </div>
 
                     @if($errors->has('image'))
@@ -27,7 +29,8 @@
                     @endif
 
                     <div class="form-outline mb-4 mt-4">
-                        <input type="text" name="continent" id="form2Example1" class="form-control" placeholder="continent" />
+                        <label for="continent">Continent</label>
+                        <input type="text" name="continent" id="continent" class="form-control" placeholder="continent" />
                     </div>
 
                     @if($errors->has('continent'))
@@ -35,7 +38,8 @@
                     @endif
 
                     <div class="form-outline mb-4 mt-4">
-                        <input type="text" name="population" id="form2Example1" class="form-control" placeholder="population" />
+                        <label for="population">Population</label>
+                        <input type="text" name="population" id="population" class="form-control" placeholder="population" />
                     </div>
 
                     @if($errors->has('population'))
@@ -43,7 +47,17 @@
                     @endif
 
                     <div class="form-outline mb-4 mt-4">
-                        <input type="text" name="territory" id="form2Example1" class="form-control" placeholder="territory" />
+                        <label for="video">Video</label>
+                        <input type="file" name="video" id="video" class="form-control" />
+                    </div>
+
+                    @if($errors->has('video'))
+                        <p class="alert alert-danger">{{ $errors->first('video') }}</p>
+                    @endif
+
+                    <div class="form-outline mb-4 mt-4">
+                        <label for="territory">Territory</label>
+                        <input type="text" name="territory" id="territory" class="form-control" placeholder="territory" />
                     </div>
 
                     @if($errors->has('territory'))
@@ -51,7 +65,8 @@
                     @endif
 
                     <div class="form-outline mb-4 mt-4">
-                        <input type="text" name="avg_price" id="form2Example1" class="form-control" placeholder="avg_price" />
+                        <label for="avg_price">Average Price</label>
+                        <input type="text" name="avg_price" id="avg_price" class="form-control" placeholder="avg_price" />
                     </div>
 
                     @if($errors->has('avg_price'))
@@ -59,7 +74,8 @@
                     @endif
 
                     <div class="form-floating">
-                        <textarea name="description" class="form-control" placeholder="description" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <label for="description">Description</label>
+                        <textarea name="description" class="form-control" placeholder="description" id="description" style="height: 100px"></textarea>
                     </div>
                     <br>
                     @if($errors->has('description'))
@@ -67,8 +83,7 @@
                     @endif
                     <br>
 
-                    <!-- Submit button -->
-                    <button type="submit" name="submit" class="btn btn-primary  mb-4 text-center">create</button>
+                    <button type="submit" name="submit" class="btn btn-primary  mb-4 text-center">Create</button>
 
                 </form>
 

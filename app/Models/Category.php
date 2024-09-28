@@ -26,7 +26,7 @@ class Category extends Model
     // category hasMany preferenceOptions
     public function preferenceOptions()
     {
-        return $this->hasMany(PreferenceOption::class);
+        return $this->hasMany(related: PreferenceOption::class);
     }
 
 }
