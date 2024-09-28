@@ -94,7 +94,7 @@
                         <li><i class="fa fa-building"></i> Daily Places Visit</li>
                         </ul>
                         <div class="main-button">
-                        <a href="{{ route('traveling.reservation', $city->id) }}">Make a Reservation</a>
+                        <a href="{{ route('traveling.show', $city->id) }}">show landmarks</a>
                         </div>
                     </div>
                     </div>

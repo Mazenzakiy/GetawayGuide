@@ -32,7 +32,7 @@ class TravelingController extends Controller
     }
 
 
-    
+
     public function makeReservations(Request $request,$city_id) {
 
         $city = City::findOrFail($request->city_id);
@@ -169,6 +169,8 @@ class TravelingController extends Controller
             })
             ->with('categories') // Load the categories relationship
             ->get();
+
+            
 
         // If no landmarks are found, return an appropriate message
         if ($recommendedLandmarks->isEmpty()) {
