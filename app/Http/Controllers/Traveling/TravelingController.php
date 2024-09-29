@@ -128,6 +128,7 @@ class TravelingController extends Controller
 
     public function show($id){
         $city = City::findOrFail($id);
+        
         $landmarks = $city->landmarks()->with('categories')->get();
         $categories = Category::all();
         $preferences = Preference::with('options.category')->get();
@@ -169,8 +170,6 @@ class TravelingController extends Controller
             })
             ->with('categories') // Load the categories relationship
             ->get();
-
-            
 
         // If no landmarks are found, return an appropriate message
         if ($recommendedLandmarks->isEmpty()) {

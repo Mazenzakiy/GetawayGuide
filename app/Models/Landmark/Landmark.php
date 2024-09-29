@@ -19,22 +19,40 @@ class Landmark extends Model
         "desc",
         "video",
         "address",
+        "mainImage",  // تأكد من إضافة mainImage إلى الحقول القابلة للتعبئة إذا كنت تريد استخدامه
     ];
+
     public $timestamps = true;
 
-
-    // landmark belongsto city
-    public function city(){
+    // العلاقة مع جدول المدن
+    public function city()
+    {
         return $this->belongsTo(City::class);
     }
 
-    // landmark hasmany landmarkImages
-    public function landmarkImages(){
-        return $this->hasMany(LandmarksImages::class);
+    // العلاقة مع جدول الصور (hasMany)
+    public function images()
+    {
+        return $this->hasMany(LandmarksImages::class, 'landmark_id');
     }
 
-    // landmark belongsToMany categories
-    public function categories(){
-        return $this->belongsToMany(Category::class,'landmark_category');
+    // العلاقة مع جدول الفئات (belongsToMany)
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'landmark_category', 'landmark_id', 'category_id');
+    }
+
+
+    protected static function booted()
+    {
+        static::saved(function ($landmark) {
+            if (!$landmark->mainImage) {
+                $firstImage = $landmark->images()->first();
+                if ($firstImage) {
+                    $landmark->mainImage = $firstImage->name;
+                    $landmark->save();
+                }
+            }
+        });
     }
 }

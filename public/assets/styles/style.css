@@ -1,9 +1,75 @@
-body{background:#f9f9f9;}
-#wrapper{padding:90px 15px;}
-.navbar-expand-lg .navbar-nav.side-nav{flex-direction: column;}
-.card{margin-bottom: 15px; border-radius:0; box-shadow: 0 3px 5px rgba(0,0,0,.1); }
-.header-top{box-shadow: 0 3px 5px rgba(0,0,0,.1)}
+body {
+    background-color: #fff; /* نفس اللون المستخدم في التطبيق */
+}
+
+#wrapper {
+    padding: 90px 15px;
+    background-color: #f9f9f9; /* لون خلفية خفيف */
+}
+
+.navbar-expand-lg .navbar-nav.side-nav {
+    flex-direction: column;
+    background-color: #22b3c1; /* تعديل لون الخلفية الجانبية */
+    color: #ffffff; /* النص يكون باللون الأبيض */
+}
+
+.navbar-nav.side-nav .nav-link {
+    color: #ffffff; /* تعديل لون النص الجانبي */
+    margin-left: 20px;
+}
+
+.navbar-nav.side-nav .nav-link:hover {
+    color: #17a2b8; /* لون Hover متناسق مع التطبيق */
+}
+
+.card {
+    margin-bottom: 15px;
+    border-radius: 0;
+    box-shadow: 0 3px 5px rgba(0,0,0,.1);
+    background-color: #ffffff; /* لون الخلفية */
+    border: 1px solid #dee2e6; /* حدود مشابهة للتطبيق */
+}
+
+.header-top {
+    box-shadow: 0 3px 5px rgba(0,0,0,.1);
+    background-color: #22b3c1; /* نفس لون الـ navbar في التطبيق */
+    color: #ffffff; /* النص يكون أبيض */
+}
+
 @media(min-width:992px) {
-#wrapper{margin-left: 200px;padding: 90px 15px 15px;}
-.navbar-nav.side-nav{background: #585f66;box-shadow: 2px 1px 2px rgba(0,0,0,.1);position:fixed;top:56px;flex-direction: column!important;left:0;width:200px;overflow-y:auto;bottom:0;overflow-x:hidden;padding-bottom:40px}
+    #wrapper {
+        margin-left: 200px;
+        padding: 90px 15px 15px;
+    }
+
+    .navbar-nav.side-nav {
+        background: #22b3c1; /* نفس لون الـ navbar */
+        box-shadow: 2px 1px 2px rgba(0,0,0,.1);
+        position: fixed;
+        top: 56px;
+        flex-direction: column !important;
+        left: 0;
+        width: 200px;
+        overflow-y: auto;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: #ffffff; /* نص القائمة العلوية باللون الأبيض */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.dropdown-item {
+    color: #22b3c1; /* النص داخل الـ dropdown */
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa; /* لون الخلفية عند الـ hover */
+    color: #17a2b8; /* لون النص عند الـ hover */
 }

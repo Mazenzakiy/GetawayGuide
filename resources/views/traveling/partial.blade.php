@@ -5,7 +5,7 @@
                 <a href="{{route('traveling.showLandmark',$landmark->id)}}">
                 @if($landmark->mainImage)
 
-                <img src="{{asset('assets/images/'.$landmark->mainImage.'')}}" class="card-img-top" alt="{{ $landmark->name }}" height="300px">
+                <img src="{{ asset('assets/images/' . $landmark->mainImage) }}" class="card-img-top" alt="{{ $landmark->name }}" height="300px">
                 @endif
                 <div class="card-body">
                     <h5 class="card-title">{{ $landmark->name }}</h5>

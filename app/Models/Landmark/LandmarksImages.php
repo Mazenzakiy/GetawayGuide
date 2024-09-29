@@ -11,13 +11,13 @@ class LandmarksImages extends Model
 
     protected $table = "landmarks_images";
 
-    protected $guarded = ['id','created_at','updated_at'];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
 
     public $timestamps = true;
 
-
-    // landmarksImage belongsto landmark
-    public function landmark(){
-        return $this->belongsTo(Landmark::class);
+    // العلاقة مع جدول المعالم (belongsTo)
+    public function landmark()
+    {
+        return $this->belongsTo(Landmark::class, 'landmark_id');
     }
 }

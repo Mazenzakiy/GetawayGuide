@@ -9,12 +9,14 @@
             <div class="col-lg-12">
                 <div class="content">
                     <!-- Background video without effects -->
-                    <div class="video-bg">
-                        <video autoplay muted loop class="clear-video">
-                            <source src="{{asset('assets/videos/Let s Go - Egypt _ A Beautiful Destinations Original.mp4')}}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+                 <!-- Background video without effects -->
+                        <div class="video-bg">
+                            <video autoplay muted loop class="clear-video">
+                                <source src="{{ asset('assets/videos/' . $country->video) }}" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+
 
                     <!-- Main content -->
                     <h4>EXPLORE OUR country</h4>
@@ -94,7 +96,7 @@
                         <li><i class="fa fa-building"></i> Daily Places Visit</li>
                         </ul>
                         <div class="main-button">
-                        <a href="{{ route('traveling.show', $city->id) }}">show landmarks</a>
+                        <a href="{{ route('traveling.show', $city->id) }}">show  landmarks</a>
                         </div>
                     </div>
                     </div>

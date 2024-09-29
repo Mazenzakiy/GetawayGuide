@@ -20,6 +20,9 @@ class City extends Model
         "image",
         "price",
         "num_days",
+        "video", // إضافة الفيديو
+
+
         "country_id",
     ];
 
